@@ -7,6 +7,15 @@ describe "NPS API" do
     select "Tennessee", :from => "state"
 
     click_button "Find Parks"
+
+    expect(current_path).to eq parks_path
+
+    expect(page).to have_css(".full_name")
+    expect(page).to have_css(".description")
+    expect(page).to have_css(".direction_info")
+    expect(page).to have_css(".hours")
+
+
   end
 end
 
