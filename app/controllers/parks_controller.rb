@@ -1,5 +1,5 @@
 class ParksController < ApplicationController
   def index
-    @parks = ParkResults.new.get_parks(params['state'])
+    @parks = ParkResults.new.create_parks(params['state'])
   end
 end

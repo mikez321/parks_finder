@@ -1,12 +1,8 @@
 class ParksService
-  def initialize(state)
-    @state = state
-  end
-
-  def all_park_info
+  def all_park_info(state)
     conn.get("parks") do |conn|
       conn.params['api_key'] = ENV['PARKS_KEY']
-      conn.params['stateCode'] = @state
+      conn.params['stateCode'] = state
     end
   end
 
