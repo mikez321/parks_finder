@@ -15,6 +15,11 @@ describe "NPS API" do
     expect(page).to have_css(".direction_info")
     expect(page).to have_css(".hours")
 
+    within ".park-Appalachian" do
+      within ".full_name" do
+        expect(page).to have_content("Appalachian National Scenic Trail")
+      end
+    end
 
   end
 end
